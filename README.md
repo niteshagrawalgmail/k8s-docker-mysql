@@ -59,6 +59,12 @@ Command to run the goapp
 docker run --name myapp -p 3000:3000 goapp:latest
 ```
 
+Commands to push local images to docker hub
+
+```
+https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+```
+
 ### Git commands
 
 git push
