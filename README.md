@@ -8,7 +8,7 @@ docker exec -it mysqldb /bin/bash
 
 mysql -u root -p
 
-Useful MySQL commands :
+### Useful MySQL commands :
 
 CREATE SCHEMA commerce;
 
