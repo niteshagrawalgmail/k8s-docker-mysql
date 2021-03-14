@@ -13,10 +13,14 @@ mysql -u root -p
 CREATE SCHEMA commerce;
 
 CREATE TABLE customers (
-	id int,
+	id int NOT NULL AUTO_INCREMENT,
 	first_name varchar(255),
-	last_name varchar(255)
+	last_name varchar(255),
+	PRIMARY KEY (id)
 );
 
 INSERT INTO customers (id, first_name, last_name) VALUES ('1','Nitesh','Agrawal');
 
+OR 
+
+INSERT INTO customers (first_name, last_name) VALUES ('foo','bar');
