@@ -8,3 +8,15 @@ docker exec -it mysqldb /bin/bash
 
 mysql -u root -p
 
+Useful MySQL commands :
+
+CREATE SCHEMA commerce;
+
+CREATE TABLE customers (
+	id int,
+	first_name varchar(255),
+	last_name varchar(255)
+);
+
+INSERT INTO customers (id, first_name, last_name) VALUES ('1','Nitesh','Agrawal');
+
