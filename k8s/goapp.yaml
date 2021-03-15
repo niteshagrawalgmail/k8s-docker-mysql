@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: goapp
+spec:
+  ports:
+  - port: 80
+    targetPort: 3000
+  selector:
+    app: goapp
+  type: LoadBalancer  
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goapp
+spec:
+  selector:
+    matchLabels:
+      app: goapp
+  template:
+    metadata:
+      labels:
+        app: goapp
+    spec:
+      containers:
+      - image: niteshsince1982/goapp:0.3.0
+        name: goapp
+        ports:
+        - containerPort: 3000
+          name: goapp
