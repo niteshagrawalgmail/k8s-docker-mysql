@@ -14,7 +14,7 @@ RUN go mod download
 COPY . .
 
 # Build the Go app
-RUN go build -o ./main ./src
+RUN go build -o ./main .
 
 
 # This container exposes port 8080 to the outside world
