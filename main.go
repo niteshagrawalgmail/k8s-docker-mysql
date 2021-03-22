@@ -6,10 +6,15 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/niteshagrawalgmail/k8s-docker-mysql/pkg/test"
 	"net/http"
 )
 func main() {
-	db, err := sql.Open("mysql", "root:password@(127.0.0.1:3306)/commerce")
+
+	parent := test.New()
+	parent.GetMessage()
+
+	db, err := sql.Open("mysql", "root:password@(mysql:3306)/commerce")
 	if err != nil {
 		fmt.Print(err.Error())
 	}
@@ -78,7 +83,8 @@ func main() {
 					}
 				}
 				defer rows.Close()
-				c.JSON(http.StatusOK, gin.H{
+				c.JSON(http.StatusOK, gin.
+					H{
 					"result": customers,
 					"count": len(customers),
 				})
